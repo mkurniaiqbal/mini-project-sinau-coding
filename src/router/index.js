@@ -7,7 +7,12 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "/",
-    name: "home",
+    name: "login",
+    component: () => import("../components/FormLogin.vue"),
+  },
+  {
+    path: "/dashboard",
+    name: "dashboard",
     component: HomeView,
   },
   {
