@@ -28,6 +28,11 @@ const routes = [
     name: "register",
     component: () => import("../components/FormRegister.vue"),
   },
+  {
+    path: "/update-list-barang/:id",
+    name: "UpdateListBarang",
+    component: () => import("../components/UpdateListBarang.vue"),
+  },
 ];
 
 const router = new VueRouter({
