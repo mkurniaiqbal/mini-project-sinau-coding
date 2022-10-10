@@ -33,6 +33,11 @@ const routes = [
     name: "UpdateListBarang",
     component: () => import("../components/UpdateListBarang.vue"),
   },
+  {
+    path: "/update-list-supplier/:id",
+    name: "UpdateListSupplier",
+    component: () => import("../components/UpdateListSupplier.vue"),
+  },
 ];
 
 const router = new VueRouter({

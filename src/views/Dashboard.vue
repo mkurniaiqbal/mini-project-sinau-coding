@@ -5,7 +5,8 @@
         tes
       </b-col>
       <b-col>
-        <ListBarang />
+        <!-- <ListBarang /> -->
+        <ListSupplier />
       </b-col>
     </div>
   </div>
@@ -14,11 +15,14 @@
 <script>
 // @ is an alias to /src
 import ListBarang from "@/components/ListBarang.vue";
+import ListSupplier from "@/components/ListSupplier.vue";
+
 
 export default {
   name: "Dashboard",
   components: {
     ListBarang,
+    ListSupplier,
   },
 };
 </script>
