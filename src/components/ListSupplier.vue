@@ -3,10 +3,10 @@
         <b-card header="Dashboard" header-bg-variant="info" header-text-variant="primary" no-body
             header-class="header-card" class="shadow">
             <div class="d-flex justify-content-between mt-2 mx-3">
-                <h4>Barang</h4>
-                <router-link to="/formadd" class="navbar-brand">
+                <h4>Supplier</h4>
+                <router-link to="/create-supplier" class="navbar-brand">
                     <button class="btn btn-primary btn-sm" type="submit">
-                        Tambah Barang
+                        Tambah Supplier
                     </button>
                 </router-link>
             </div>
@@ -14,18 +14,9 @@
             <b-table hover :items="items" :fields="fields" class="table table-bordered text-center"
                 :current-page="currentPage" :per-page="page" id="my-table">
 
-                <template #cell(index)="data">
+                <template #cell(no)="data">
                     {{ data.index + 1 }}
                 </template>
-                <!-- <template #cell(namaSupplier)="data">
-                    {{ data.item.supplier.namaSupplier }}
-                </template>
-                <template #cell(alamatSupplier)="data">
-                    {{ data.item.supplier.alamat }}
-                </template>
-                <template #cell(no.TelpSupplier)="data">
-                    {{ data.item.supplier.noTelp }}
-                </template> -->
                 <template #cell(actions)="item">
                     <b-button type="button" class="btn btn-danger btn-sm"
                         @click="onDelete(item.item.id, item.item.namaSupplier)">
@@ -56,7 +47,7 @@ export default {
     data() {
         return {
             fields: [
-                "index",
+                "no",
                 "namaSupplier",
                 "alamat",
                 { key: "noTelp", label: "No. Telp" },
