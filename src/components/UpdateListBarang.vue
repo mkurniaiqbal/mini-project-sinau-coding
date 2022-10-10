@@ -1,43 +1,60 @@
 <template>
-    <div class="container">
-        <div class="my-4">
-            <h4 class="my-auto">Update Buku</h4>
+    <div>
+        <div class="row">
+            <HeaderComp />
+
         </div>
-        <b-form @submit="onUpdate" v-if="show" class="border p-4">
-            <b-form-group id="input-group-2" label="Judul:" label-for="input-2">
-                <b-form-input id="input-2" v-model="form.namaBarang" placeholder="Masukan Judul Buku" required
-                    class="mb-3">
-                </b-form-input>
-            </b-form-group>
 
-            <b-form-group id="input-group-1" label="ISBN:" label-for="input-1">
-                <b-form-input id="input-1" v-model="form.harga" placeholder="Masukan ISBN" required class="mb-3">
-                </b-form-input>
-            </b-form-group>
-
-            <b-form-group id="input-group-3" label="Penerbit:" label-for="input-3">
-                <b-form-input id="input-3" v-model="form.stok" placeholder="Masukan Nama Penerbit" required
-                    class="mb-3"></b-form-input>
-            </b-form-group>
-
-            <b-form-group id="input-group-4" label="Pembuat:" label-for="input-4">
-                <b-form-input id="input-4" v-model="form.supplier.namaSupplier" placeholder="Masukan Nama Pembuat"
-                    required class="mb-3"></b-form-input>
-            </b-form-group>
-
-            <div class="text-center">
-                <b-button type="submit" variant="primary" class="mx-3">Update</b-button>
-                <router-link to="/dashboard" class="navbar-brand">
-                    <b-button variant="success" class="mx-3">Kembali</b-button>
-                </router-link>
+        <div class="container">
+            <div class="my-4">
+                <h4 class="my-auto">Update Buku</h4>
             </div>
-        </b-form>
+            <b-form @submit="onUpdate" v-if="show" class="border p-4">
+                <b-form-group id="input-group-2" label="Judul:" label-for="input-2">
+                    <b-form-input id="input-2" v-model="form.namaBarang" placeholder="Masukan Judul Buku" required
+                        class="mb-3">
+                    </b-form-input>
+                </b-form-group>
+
+                <b-form-group id="input-group-1" label="ISBN:" label-for="input-1">
+                    <b-form-input id="input-1" v-model="form.harga" placeholder="Masukan ISBN" required class="mb-3">
+                    </b-form-input>
+                </b-form-group>
+
+                <b-form-group id="input-group-3" label="Penerbit:" label-for="input-3">
+                    <b-form-input id="input-3" v-model="form.stok" placeholder="Masukan Nama Penerbit" required
+                        class="mb-3"></b-form-input>
+                </b-form-group>
+
+                <b-form-group id="input-group-4" label="Pembuat:" label-for="input-4">
+                    <b-form-input id="input-4" v-model="form.supplier.namaSupplier" placeholder="Masukan Nama Pembuat"
+                        required class="mb-3"></b-form-input>
+                </b-form-group>
+
+                <div class="text-center">
+                    <b-button type="submit" variant="primary" class="mx-3">Update</b-button>
+                    <router-link to="/dashboard" class="navbar-brand">
+                        <b-button variant="success" class="mx-3">Kembali</b-button>
+                    </router-link>
+                </div>
+            </b-form>
+        </div>
+        <div class="row fixed-bottom">
+            <FooterComp />
+        </div>
     </div>
 </template>
   
 <script>
 import axios from "axios";
+import FooterComp from "@/components/FooterComp.vue";
+import HeaderComp from "@/components/HeaderComp.vue";
 export default {
+    components: {
+        FooterComp,
+        HeaderComp,
+
+    },
     data() {
         return {
             result: {},
