@@ -38,6 +38,11 @@ const routes = [
     name: "UpdateListSupplier",
     component: () => import("../components/UpdateListSupplier.vue"),
   },
+  {
+    path: "/create-supplier",
+    name: "CreateListSupplier",
+    component: () => import("../components/CreateListSupplier.vue"),
+  },
 ];
 
 const router = new VueRouter({
