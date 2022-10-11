@@ -12,9 +12,9 @@
             </div>
 
             <b-table hover :items="items" :fields="fields" class="table table-bordered text-center"
-                :current-page="currentPage" :per-page="page" id="my-table">
+                :current-page="currentPage" :per-page="page" id="my-table" responsive>
 
-                <template #cell(index)="data">
+                <template #cell(no)="data">
                     {{ data.index + 1 }}
                 </template>
                 <template #cell(namaSupplier)="data">
@@ -55,7 +55,7 @@ export default {
     data() {
         return {
             fields: [
-                "index",
+                "no",
                 "namaBarang",
                 "stok",
                 "harga",

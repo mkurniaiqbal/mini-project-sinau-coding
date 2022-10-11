@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="mb-5">
 
         <div class="row">
             <HeaderComp />
@@ -30,7 +30,7 @@
 
                 <div class="text-center">
                     <b-button b-col type="submit" variant="primary" class="mx-3">Submit</b-button>
-                    <b-button b-col type="reset" variant="danger" class="mx-3">Reset</b-button>
+                    <!-- <b-button b-col type="reset" variant="danger" class="mx-3">Reset</b-button> -->
                     <router-link to="/dashboard" class="navbar-brand">
                         <b-button variant="success" class="mx-3">Kembali</b-button>
                     </router-link>
@@ -83,6 +83,7 @@ export default {
                 console.log("inidata", data)
                 alert("data berhasil di buat");
                 this.onReset(event);
+                this.$router.push("/dashboard");
             } catch (error) {
                 alert("data gagal di buat");
             }
@@ -91,11 +92,9 @@ export default {
         onReset(event) {
             event.preventDefault();
             // Reset our form values
-            this.form.title = "";
-            this.form.author = "";
-            this.form.description = "";
-            this.form.publisher = "";
-            this.form.isbn = "";
+            this.form.namaSupplier = "";
+            this.form.alamat = "";
+            this.form.noTelp = "";
 
             // Trick to reset/clear native browser form validation state
             this.show = false;

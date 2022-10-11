@@ -4,12 +4,19 @@
       <HeaderComp />
     </div>
     <div class="row">
-      <b-col cols="2">
-        tes
+      <b-col lg="2">
+        <SideBarComp />
       </b-col>
-      <b-col>
-        <!-- <ListBarang /> -->
-        <ListSupplier />
+      <b-col cols>
+        <b-col></b-col>
+        <div class="tab-content clearfix">
+          <div class="tab-pane active" id="1a">
+            <ListBarang />
+          </div>
+          <div class="tab-pane" id="2a">
+            <ListSupplier />
+          </div>
+        </div>
       </b-col>
     </div>
     <div class="row">
@@ -24,7 +31,7 @@ import ListBarang from "@/components/ListBarang.vue";
 import ListSupplier from "@/components/ListSupplier.vue";
 import FooterComp from "@/components/FooterComp.vue";
 import HeaderComp from "@/components/HeaderComp.vue";
-
+import SideBarComp from "@/components/SideBarComp.vue";
 export default {
   name: "Dashboard",
   components: {
@@ -32,6 +39,7 @@ export default {
     ListSupplier,
     FooterComp,
     HeaderComp,
+    SideBarComp,
 
   },
 };
