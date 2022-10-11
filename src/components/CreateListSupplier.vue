@@ -82,7 +82,7 @@ export default {
                     }
                 );
                 console.log("inidata", data)
-                swal("Good job!", "You clicked the button!", "success");
+                swal("Success!", "Data Supplier Berhasil DiTambahkan!", "success");
 
                 // alert("data berhasil di buat");
                 this.onReset(event);
