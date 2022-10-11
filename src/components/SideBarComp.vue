@@ -2,10 +2,13 @@
     <div>
         <div class="row">
             <b-col>
-                <b-card footer="Profile" footer-bg-variant="info" footer-text-variant="primary"
-                    footer-class="footer-card text-center" class="shadow mb-2">
+                <b-card footer-bg-variant="info" footer-text-variant="primary" footer-class="footer-card text-center"
+                    class="shadow mb-2" footer-tag="footer">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2paNURw1DBfUC5w4I3m3EoIo7vHLpWxtXCg&usqp=CAU"
                         alt="" class="w-100">
+                    <template #footer>
+                        <h6 class="mb-0 profile">{{profileName}}</h6>
+                    </template>
                 </b-card>
             </b-col>
         </div>
@@ -14,6 +17,7 @@
             <b-col>
                 <b-card header="Menu" header-bg-variant="info" header-text-variant="primary"
                     header-class="header-card text-center" class="shadow mb-2 menu">
+
                     <ul class="nav nav-pills row">
                         <li class="active">
                             <a href="#1a" data-toggle="tab">Barang</a>
@@ -39,9 +43,9 @@
                     <b-row class="online">
                         <b-col>
                             waktu online
-                            <!-- {{profileName}} -->
+
                         </b-col>
-                        <b-col>:</b-col>
+                        <b-col>: </b-col>
                     </b-row>
                 </b-card>
             </b-col>
@@ -50,7 +54,21 @@
     </div>
 </template>
 <script>
+export default {
+    data() {
+        return {
+            profileName: "",
+        };
+    },
+    created() {
+        this.profileName = localStorage.getItem("profileName");
+    }
+}
+// const profileName = localStorage.getItem("profileName");
+// console.log("ini profile", profileName)
+
 </script>
+
 
 <style scoped>
 .nav-pills .active {
@@ -81,6 +99,10 @@ li {
     padding-top: 0px;
     padding-bottom: 0px;
 
+}
+
+.profile {
+    text-transform: uppercase;
 }
 </style>
 

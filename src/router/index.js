@@ -43,6 +43,11 @@ const routes = [
     name: "CreateListSupplier",
     component: () => import("../components/CreateListSupplier.vue"),
   },
+  {
+    path: "/create-barang",
+    name: "CreateListBarang",
+    component: () => import("../components/CreateListBarang.vue"),
+  },
 ];
 
 const router = new VueRouter({

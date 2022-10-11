@@ -98,7 +98,8 @@ export default {
                     }
                 );
                 console.log("ini update", data);
-                alert("data berhasil diupdate");
+                swal("Succes!", "Data Supplier Berhasil Diupdate!", "success");
+                // alert("data berhasil diupdate");
                 this.$router.push("/dashboard");
             } catch (error) {
                 alert("data gagal diupdate");

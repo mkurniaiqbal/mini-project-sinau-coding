@@ -45,6 +45,7 @@
 </template>
   
 <script>
+import swal from 'sweetalert';
 import axios from "axios";
 import FooterComp from "@/components/FooterComp.vue";
 import HeaderComp from "@/components/HeaderComp.vue";
@@ -81,7 +82,9 @@ export default {
                     }
                 );
                 console.log("inidata", data)
-                alert("data berhasil di buat");
+                swal("Good job!", "You clicked the button!", "success");
+
+                // alert("data berhasil di buat");
                 this.onReset(event);
                 this.$router.push("/dashboard");
             } catch (error) {
