@@ -49,6 +49,7 @@
 import axios from "axios";
 import FooterComp from "@/components/FooterComp.vue";
 import HeaderComp from "@/components/HeaderComp.vue";
+import swal from "sweetalert";
 export default {
     components: {
         FooterComp,
@@ -104,7 +105,9 @@ export default {
                     }
                 );
                 console.log("ini update", data);
-                alert("data berhasil diupdate");
+                swal("Succes!", "Data Barang Berhasil Diupdate!", "success");
+
+                // alert("data berhasil diupdate");
                 this.$router.push("/dashboard");
             } catch (error) {
                 alert("data gagal diupdate");

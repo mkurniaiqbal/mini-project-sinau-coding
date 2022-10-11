@@ -4,7 +4,7 @@
             header-class="header-card" class="shadow">
             <div class="d-flex justify-content-between mt-2 mx-3">
                 <h4>Barang</h4>
-                <router-link to="/formadd" class="navbar-brand">
+                <router-link to="/create-barang" class="navbar-brand">
                     <button class="btn btn-primary btn-sm" type="submit">
                         Tambah Barang
                     </button>
@@ -65,8 +65,8 @@ export default {
                 { key: "actions", label: "Aksi" },
             ],
             items: [],
-            currentPage: 0,
-            totalItems: 0,
+            currentPage: 2,
+            totalItems: 1,
         };
     },
     created() {
@@ -76,7 +76,7 @@ export default {
         async getData(page) {
             const token = localStorage.getItem("token");
             console.log(token)
-            console.log("inip", page)
+            // console.log("inip", page)
 
             // console.log("ini curent", currentPage)
             axios
@@ -89,8 +89,8 @@ export default {
                     console.log("ini res", res)
                     console.log("ini data 1", res.data.data);
                     this.currentPage = res.data.page;
-                    // this.perPage = res.data.page;
                     this.totalItems = res.data.total_record;
+                    // this.page = res.data.limit;
                     this.items = res.data.data;
 
                     console.log("intem", this.perPage)
