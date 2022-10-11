@@ -58,6 +58,7 @@ export default {
                 );
                 if (data.data.message === "LOGIN SUCCESS") {
                     localStorage.setItem("token", data.data.data.token);
+                    localStorage.setItem("profileName", data.data.data.profileName);
                     alert("login berhasil");
                     this.$router.push("/dashboard");
                 }

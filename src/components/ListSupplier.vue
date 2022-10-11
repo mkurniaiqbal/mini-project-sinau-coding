@@ -12,7 +12,7 @@
             </div>
 
             <b-table hover :items="items" :fields="fields" class="table table-bordered text-center"
-                :current-page="currentPage" :per-page="page" id="my-table">
+                :current-page="currentPage" :per-page="page" id="my-table" responsive>
 
                 <template #cell(no)="data">
                     {{ data.index + 1 }}
@@ -55,7 +55,7 @@ export default {
                 { key: "actions", label: "Aksi" },
             ],
             items: [],
-            currentPage: 0,
+            currentPage: 1,
             totalItems: 0,
         };
     },
