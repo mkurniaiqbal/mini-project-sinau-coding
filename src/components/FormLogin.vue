@@ -24,9 +24,9 @@
                             </b-form-group>
 
                             <div class="daftar">
-                                <b-button type="submit" variant="primary">Daftar</b-button>
+                                <b-button type="submit" variant="primary">Login</b-button>
                                 <router-link to="/register" class="navbar-brand">
-                                    <p style="margin-top: 5px;">Sudah Punya Akun</p>
+                                    <p style="margin-top: 5px;">Belum Punya Akun</p>
                                 </router-link>
                             </div>
                         </b-form>

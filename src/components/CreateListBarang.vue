@@ -27,12 +27,9 @@
                         class="mb-3"></b-form-input>
                 </b-form-group>
 
-                <b-form-group id="input-group-4" label="Stok Barang" label-for="input-4">
-                    <b-form-select v-model="form.supplier.namaSupplier" id="input-3" :options="options" size="sm"
-                        class="select mb-3" value-field="namaSupplier" text-field="namaSupplier" required>
-                    </b-form-select>
-                </b-form-group>
-
+                <select v-model="form.supplier" id="input-3" class="mb-3 select">
+                    <option v-for="data in options" :value="data">{{data.namaSupplier}}</option>
+                </select>
 
                 <div class="text-center">
                     <b-button b-col type="submit" variant="primary" class="mx-3">Submit</b-button>
@@ -65,15 +62,9 @@ export default {
         return {
             form: {
                 namaBarang: "",
-                harga: 0,
-                stok: 0,
-                id: 0,
-                supplier: {
-                    alamat: "",
-                    namaSupplier: "",
-                    noTelp: "",
-                    id: 0,
-                },
+                harga: "",
+                stok: "",
+                supplier: {},
             },
             totalItems: 1,
             totalPage: 1,
@@ -119,14 +110,14 @@ export default {
 
             // console.log("ini curent", currentPage)
             axios
-                .get(`http://localhost:8080/supplier/find-all?offset=1&limit=1003`, {
+                .get(`http://localhost:8080/supplier/find-all?offset=1&limit=948`, {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
                 })
                 .then((res) => {
                     console.log("ini res", res)
-                    console.log("ini data 1", res.data.data);
+                    console.log("ini data 1", res.data);
                     // this.currentPage = res.data.page;
                     // this.perPage = res.data.page;
                     this.totalItems = res.data.total_record;
@@ -134,6 +125,7 @@ export default {
 
                     // this.items = res.data.data;
                     this.options = res.data.data
+                    // this.leng = res.data.data.length
 
                     console.log("intem1", this.totalItems)
 

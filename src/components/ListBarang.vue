@@ -65,7 +65,7 @@ export default {
                 { key: "actions", label: "Aksi" },
             ],
             items: [],
-            currentPage: 2,
+            currentPage: 1,
             totalItems: 1,
         };
     },
