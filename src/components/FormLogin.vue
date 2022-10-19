@@ -1,9 +1,10 @@
 <template>
-    <div class="m-auto mt-5 container">
-        <div class="row">
-            <b-col class="header-login primary">
-                <h1>Sinau Coding</h1>
-                <h3 class="text-primary">Selamat Datang</h3>
+    <div class="m-auto pt-5 mt-5 container">
+        <div class="row pt-5 mt-4">
+            <b-col class="header-login primary text-center m-auto">
+                <img src="../assets/logos.jpeg" alt="">
+                <!-- <h1>Sinau Coding</h1>/ -->
+                <h3 class="text-primary mt-3">Selamat Datang</h3>
                 <h4 class="text-primary"><span style="text-transform: uppercase;"> Marketplace</span> Sinau Codimg</h4>
             </b-col>
             <b-col>

@@ -26,10 +26,9 @@
                         class="mb-3"></b-form-input>
                 </b-form-group>
 
-                <b-form-group id="input-group-4" label="Pembuat:" label-for="input-4">
-                    <b-form-input id="input-4" v-model="form.supplier.namaSupplier" placeholder="Masukan Nama Pembuat"
-                        required class="mb-3"></b-form-input>
-                </b-form-group>
+                <select v-model="form.supplier" id="input-3" class="mb-3 select">
+                    <option v-for="data in options" :value="data">{{data.namaSupplier}}</option>
+                </select>
 
                 <div class="text-center">
                     <b-button type="submit" variant="primary" class="mx-3">Update</b-button>
@@ -63,14 +62,15 @@ export default {
                 harga: "",
                 namaBarang: "",
                 stok: "",
-                id: 0,
-                supplier: "",
+                supplier: {},
             },
+            options: [],
             show: true,
         };
     },
     mounted() {
         this.onLoad();
+        this.getData()
     },
     methods: {
         async onLoad() {
@@ -89,6 +89,38 @@ export default {
             console.log("ini result", result);
             this.form = result;
         },
+
+        async getData() {
+            const token = localStorage.getItem("token");
+            // const total = this.totalItems
+            // console.log("ini total", total)
+            // console.log("inip", page)
+
+            // console.log("ini curent", currentPage)
+            axios
+                .get(`http://localhost:8080/supplier/find-all?offset=1&limit=948`, {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                })
+                .then((res) => {
+                    console.log("ini res", res)
+                    console.log("ini data 1", res.data);
+                    // this.currentPage = res.data.page;
+                    // this.perPage = res.data.page;
+                    this.totalItems = res.data.total_record;
+                    this.totalPage = res.data.total_page;
+
+                    // this.items = res.data.data;
+                    this.options = res.data.data
+                    // this.leng = res.data.data.length
+
+                    console.log("intem1", this.totalItems)
+
+                    console.log("intem", this.options)
+                });
+        },
+
         async onUpdate(event) {
             const id = this.$route.params.id;
 
@@ -116,4 +148,14 @@ export default {
     },
 };
 </script>
+
+<style scoped>
+.select {
+    width: 100%;
+    border: 1px solid #ced4da;
+    background-color: white;
+    border-radius: 0.375rem;
+    padding: 0.375rem 0.75rem;
+}
+</style>
   
